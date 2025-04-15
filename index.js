@@ -7,5 +7,5 @@ const cityNameDisplay = document.getElementById("city-name");
 const temperatureDisplay = document.getElementById("temperature");
 const descriptionDisplay = document.getElementById("description");
 const erorMessage = document.getElementById("error-message");
-//nova greska kreirana 
+
 })
