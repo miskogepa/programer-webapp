@@ -8,4 +8,5 @@ const temperatureDisplay = document.getElementById("temperature");
 const descriptionDisplay = document.getElementById("description");
 const erorMessage = document.getElementById("error-message");
 //nova greska kreirana 
+//druga kreirana greska
 })
