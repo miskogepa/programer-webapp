@@ -15,7 +15,30 @@ document.addEventListener("DOMContentLoaded", () => {
         if (city === "") {
 
             return;
+        } // ako je polje prazno, ne radi nista, moze da se kod napise 
+        // i ovako :
+        // if (!city) return;
+
+        // server je uvek na drugom mestu, pa je potrebno da budemo
+        //svesni da ce odgovor biti sporiji
+        // moze da se desi da server ne odgovara, pa izbaci gresku
+        //dve stvari koje treba da zapamtimo:
+        // it may trow an error
+        // server/database is always in another country
+
+        // radimo na prvom slucaju it may trow an error
+        // koristimo try-catch blok
+
+        try{
+         fetchWeatherData(city)
+
+
+        }catch (error) {
+            showError("An error occurred while fetching the weather data. Please try again later.");
+            
         }
+
+
 
 
 
@@ -30,6 +53,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function displayWeatherData(weatherData) {
         //display the weather data on the page
+    }
+
+    function showError(message) {
+        //display error message
+        weatherInfo.classList.add("hidden");
+        erorMessage.classList.remove("hidden");
     }
 
 
