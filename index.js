@@ -30,7 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // koristimo try-catch blok
 
         try {
-            const weatherData = await fetchWeatherData(city)
+            const weatherData = await fetchWeatherData(city) // zato sto cekamo odgovor od servera koristimo await
+            //await i async funkcija su dodate u komitu async function i await
+            displayWeatherData(weatherData);
 
 
         } catch (error) {
