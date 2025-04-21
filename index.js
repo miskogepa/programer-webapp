@@ -51,6 +51,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function fetchWeatherData(city) {
         //get the weather data from the API
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`;
+
+        //sada dodajemo fetch funkciju koja ce da vrati podatke ili takozvani request
+
+        const response = fetch(url); // ovde je potrebno da dodamo await, jer cemo cekati odgovor od servera i to cemo uraditi na drugoj grani
     }
 
     function displayWeatherData(weatherData) {
