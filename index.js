@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     // uzimanje id elementa iz HTML-a
     const cityInput = document.getElementById("city-input");
-    const getWeatherButton = document.getElementById("get-weather-button");
+    const getWeatherButton = document.getElementById("get-weather-btn");
     const weatherInfo = document.getElementById("weather-info");
     const cityNameDisplay = document.getElementById("city-name");
     const temperatureDisplay = document.getElementById("temperature");
@@ -40,14 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
-
-
-
-
-
-
-
-    })
+    });
 
     async function fetchWeatherData(city) {
         //get the weather data from the API
@@ -66,8 +59,15 @@ document.addEventListener("DOMContentLoaded", () => {
         return data; // vrati podatke
     }
 
-    function displayWeatherData(weatherData) {
+    function displayWeatherData(data) {
         //display the weather data on the page
+        const { name, main, weather } = data; 
+        cityNameDisplay.textContent = name; // uzimamo ime grada iz podataka
+
+        // otkljucavamo elemente koji su bili sakriveni
+        weatherInfo.classList.remove("hidden"); // otkljucavamo elemente koji su bili sakriveni sa klasom hidden
+        erorMessage.classList.add("hidden"); // sakrivamo gresku ako je bila prikazana
+
     }
 
     function showError(message) {
