@@ -67,6 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
         // otkljucavamo elemente koji su bili sakriveni
         weatherInfo.classList.remove("hidden"); // otkljucavamo elemente koji su bili sakriveni sa klasom hidden
         erorMessage.classList.add("hidden"); // sakrivamo gresku ako je bila prikazana
+        temperatureDisplay.textContent = `Temperatura: ${Math.round(main.temp)}°C`; // uzimamo temperaturu iz podataka i zaokruzujemo je na ceo broj
+        descriptionDisplay.textContent = `Vreme: ${weather[0].description}`; // uzimamo opis vremena iz podataka
 
     }
 
