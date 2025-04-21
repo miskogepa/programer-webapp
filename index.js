@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         //sada dodajemo fetch funkciju koja ce da vrati podatke ili takozvani request
 
-        const response = fetch(url); // ovde je potrebno da dodamo await, jer cemo cekati odgovor od servera i to cemo uraditi na drugoj grani
+        const response = fetch(url); // ovde je potrebno da dodamo await, jer cemo cekati odgovor od servera i to cemo uraditi na drugoj grani test
     }
 
     function displayWeatherData(weatherData) {
