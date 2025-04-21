@@ -55,7 +55,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         //sada dodajemo fetch funkciju koja ce da vrati podatke ili takozvani request
 
-        const response = fetch(url); // ovde je potrebno da dodamo await, jer cemo cekati odgovor od servera i to cemo uraditi na drugoj grani test
+        const response = await fetch(url);
+        console.log(typeof response);
+        console.log('RESPONSE:', response);
+
+        if (!response.ok) {
+            throw new Error("City not found"); // ako je odgovor od servera greska, izbaci gresku city not found takodje ako korisnik pogresi u imenu grada
+        }
+        const data = await response.json(); // ako je sve u redu, vrati podatke u json formatu
+        return data; // vrati podatke
     }
 
     function displayWeatherData(weatherData) {
