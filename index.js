@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const API_KEY = "5f56d525d1619d0a2cd2eac4ce55588e";
 
-    getWeatherButton.addEventListener("click", () => {
+    getWeatherButton.addEventListener("click", async () => {
         const city = cityInput.value.trim(); // uzimanje vrednosti iz input polja
         if (city === "") {
 
@@ -29,13 +29,13 @@ document.addEventListener("DOMContentLoaded", () => {
         // radimo na prvom slucaju it may trow an error
         // koristimo try-catch blok
 
-        try{
-         fetchWeatherData(city)
+        try {
+            const weatherData = await fetchWeatherData(city)
 
 
-        }catch (error) {
+        } catch (error) {
             showError("An error occurred while fetching the weather data. Please try again later.");
-            
+
         }
 
 
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     })
 
-    function fetchWeatherData(city) {
+    async function fetchWeatherData(city) {
         //get the weather data from the API
     }
 
